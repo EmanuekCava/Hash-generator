@@ -96,8 +96,6 @@ def amount():
         completList.extend(justNumbersCharacters)
         completList.extend(justSymbolsCharacters)
 
-    print(completList)
-
     hash.delete(0, END)
     amountInt = int(amountCharacters.get())
 
@@ -105,9 +103,10 @@ def amount():
         messagebox.showerror("ERROR", "You min amount of charactes is 1 and the max is 99.")
     else: 
         random.shuffle(completList)
+        number = random.randint(0, 9)
 
         while amountInt > 0:
-            string+=completList[6]
+            string+=completList[number]
             random.shuffle(completList)
             amountInt-=1
 
